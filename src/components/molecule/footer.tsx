@@ -10,7 +10,7 @@ export const Footer = () => {
           Serge Mezui<span className='text-primary'>.</span>
         </h1>
         <div className='font-mono flex items-center gap-2'>
-          <span>Powererd By</span>
+          <span>Powered By</span>
           <Image src={pasker} alt='Pasker Logo' className='w-32' />
         </div>
       </MotionDiv>

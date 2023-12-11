@@ -4,6 +4,10 @@ import { MotionDiv } from '../atom';
 
 const data = [
   {
+    name: 'It-Grafik',
+    image: '/images/it-grafik-logo.png',
+  },
+  {
     name: "Transit'Up",
     image: '/images/transit-up-logo.png',
   },
