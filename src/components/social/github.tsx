@@ -1,7 +1,11 @@
 import { IconProps } from '../icons';
 
 export const GitHubIcon = (props: IconProps) => (
-  <div className='w-10 h-10 tablet:w-14 tablet:h-14 cursor-pointer bg-primary rounded-full flex items-center justify-center'>
+  <a
+    target='_blank'
+    href='https://github.com/SergeMezui16'
+    className='w-10 h-10 tablet:w-14 tablet:h-14 cursor-pointer bg-primary rounded-full flex items-center justify-center'
+  >
     <svg
       width='24px'
       viewBox='0 0 20 20'
@@ -25,5 +29,5 @@ export const GitHubIcon = (props: IconProps) => (
         </g>
       </g>
     </svg>
-  </div>
+  </a>
 );

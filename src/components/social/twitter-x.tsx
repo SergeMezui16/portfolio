@@ -1,7 +1,11 @@
 import { IconProps } from '../icons';
 
 export const TwitterXIcon = (props: IconProps) => (
-  <div className='w-10 h-10 tablet:w-14 tablet:h-14 cursor-pointer bg-primary rounded-full flex items-center justify-center'>
+  <a
+    target='_blank'
+    href='https://twitter.com/serge_mezui'
+    className='w-10 h-10 tablet:w-14 tablet:h-14 cursor-pointer bg-primary rounded-full flex items-center justify-center'
+  >
     <svg
       version='1.1'
       fill='#FFFFFF'
@@ -20,5 +24,5 @@ export const TwitterXIcon = (props: IconProps) => (
         />
       </g>
     </svg>
-  </div>
+  </a>
 );

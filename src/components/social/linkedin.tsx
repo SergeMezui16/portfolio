@@ -1,7 +1,11 @@
 import { IconProps } from '../icons';
 
 export const LinkedInIcon = (props: IconProps) => (
-  <div className='w-10 h-10 tablet:w-14 tablet:h-14 cursor-pointer bg-primary rounded-full flex items-center justify-center'>
+  <a
+    target='_blank'
+    href='https://www.linkedin.com/in/serge-mezui-127b87276'
+    className='w-10 h-10 tablet:w-14 tablet:h-14 cursor-pointer bg-primary rounded-full flex items-center justify-center'
+  >
     <svg
       viewBox='0 0 20 20'
       fill='#FFFFFF'
@@ -11,9 +15,7 @@ export const LinkedInIcon = (props: IconProps) => (
       {...props}
     >
       <title>Linkedin</title>
-      <g
-        id='Page-1'
-      >
+      <g id='Page-1'>
         <g
           id='Dribbble-Light-Preview'
           transform='translate(-180.000000, -7479.000000)'
@@ -27,5 +29,5 @@ export const LinkedInIcon = (props: IconProps) => (
         </g>
       </g>
     </svg>
-  </div>
+  </a>
 );
