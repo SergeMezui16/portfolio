@@ -14,18 +14,18 @@ export const metadata: Metadata = {
   authors: [{ name: 'Serge Mezui', url: 'https://sergemezui.dev' }],
   creator: 'Serge Mezui',
   keywords: [
-    'serge',
     'mezui',
-    'serge mezui',
-    'gabonais',
+    'serge',
     'gabon',
     'rwanda',
+    'gabonais',
     'gabonese',
     'developper',
+    'serge mezui',
+    'Serge Mezui',
     'web developper',
     'sergemezui.com',
     'sergemezui.dev',
-    'Serge Mezui',
   ],
 };
 
