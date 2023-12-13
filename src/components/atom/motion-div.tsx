@@ -8,9 +8,9 @@ export type MotionDivProps = HTMLAttributes<HTMLDivElement> & MotionProps;
 export const MotionDiv = (props: MotionDivProps) => {
   return (
     <motion.div
-      initial={false}
-      whileInView={{ opacity: 1, y: -5 }}
-      className='y-5 mt-4'
+      // initial={false}
+      initial={{ opacity: 0, y: 55 }}
+      whileInView={{ opacity: 1, y: 0 }}
       {...props}
     />
   );
