@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { HTMLAttributes } from 'react';
 import { MotionProps, motion } from 'framer-motion';
@@ -6,11 +6,11 @@ import { MotionProps, motion } from 'framer-motion';
 export type MotionDivProps = HTMLAttributes<HTMLDivElement> & MotionProps;
 
 export const MotionDiv = (props: MotionDivProps) => {
-  props;
   return (
     <motion.div
-      initial={{ opacity: 0, y: 55 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={false}
+      whileInView={{ opacity: 1, y: -5 }}
+      className='y-5 mt-4'
       {...props}
     />
   );

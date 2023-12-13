@@ -78,7 +78,7 @@ export const SkillCard = () => {
               </h2>
               <div className='p-5'>
                 <p>{description}</p>
-                <h4 className='text-xl font-bold my-4 text-primary'>Technos</h4>
+                <h3 className='text-xl font-bold my-4 text-primary'>Technos</h3>
                 <p className='flex flex-col gap-1'>
                   {technos.map((t) => (
                     <span key={t}>{t}</span>

@@ -12,6 +12,8 @@ export const Header = () => {
               className='w-[30px] h-[30px] tablet:w-[45px] tablet:h-[45px] rounded-full'
               src={logo}
               alt='Logo Serge Mezui'
+              width={100}
+              height={75}
             />
             <h4 className='text-xl tablet:text-2xl font-bold'>
               Serge Mezui.

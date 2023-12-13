@@ -16,6 +16,8 @@ export const HomeCard = () => {
             className='w-[184px] h-[184px] tablet:w-[344px] tablet:h-[344px] rounded-full shadow-lg shadow-primary mb-8 tablet:mb-0 transition-all hover:scale-105'
             src={photo}
             alt='Logo Serge Mezui'
+            width={314}
+            height={316}
           />
         </MotionDiv>
         <MotionDiv className='w-full tablet:text-end flex flex-col tablet:gap-3 gap-6 text-center'>

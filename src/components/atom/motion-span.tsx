@@ -6,11 +6,10 @@ import { MotionProps, motion } from 'framer-motion';
 export type MotionSpanProps = HTMLAttributes<HTMLSpanElement> & MotionProps;
 
 export const MotionSpan = (props: MotionSpanProps) => {
-  props;
   return (
     <motion.span
       initial={{ opacity: 0, y: 55 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 2 }}
       {...props}
     />
   );
