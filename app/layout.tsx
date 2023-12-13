@@ -4,6 +4,7 @@ import { PropsWithChildren } from 'react';
 import { cn } from '@/lib/cn';
 import { euroStile, ubuntu } from '@/assets/fonts';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: 'Serge Mezui.',
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang='en'>
       <body className={cn(ubuntu.variable, euroStile.variable)}>
         {children} <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

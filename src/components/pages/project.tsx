@@ -39,7 +39,7 @@ const data = [
   {
     name: 'Akoma Server',
     description:
-      'Projet independant de rescencement des servants de messe du cameroun',
+      'Software for managing corporate communication, data sharing and storage in a secure, synchronized way',
     technos: ['TypeScript', 'Next JS', 'PHP', 'SQL', 'React'],
     image: '/images/akoma-server.png',
   },
