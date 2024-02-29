@@ -55,7 +55,7 @@
  
 @layer base {
   * {
-    @apply border-border font-ubuntu;
+    @apply border-border font-ubuntu text-base;
   }
 
   h1, h2, h3, h4, h5 {
