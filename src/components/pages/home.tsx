@@ -7,7 +7,7 @@ import { MotionDiv } from '../atom';
 export const HomeCard = () => {
   return (
     <div
-      className='container min-h-screen flex items-center justify-center'
+      className='container min-h-screen flex items-center justify-center bg-background'
       id='home'
     >
       <div className='flex flex-col tablet:flex-row'>

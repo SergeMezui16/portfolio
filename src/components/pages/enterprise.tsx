@@ -13,7 +13,7 @@ const data = [
   },
   {
     name: 'Alphocine Water',
-    image: '/images/alphoncine-logo.jpg',
+    image: '/images/alphoncine-logo.png',
   },
 ] satisfies {
   name: string;
