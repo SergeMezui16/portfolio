@@ -1,6 +1,14 @@
-import { cn } from '@/lib/cn';
+'use client';
+
 import Image from 'next/image';
 import { MotionDiv } from '../atom';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '../ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
+import { useRef } from 'react';
 
 const data = [
   {
@@ -21,6 +29,8 @@ const data = [
 }[];
 
 export const EnterpriseCard = () => {
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: false }));
+
   return (
     <div className='min-h-screen flex items-center py-10' id='enterprise'>
       <div className='container'>
@@ -30,10 +40,18 @@ export const EnterpriseCard = () => {
           </h1>
           <p className='my-1 italic text-primary'>Who have you worked with?</p>
         </MotionDiv>
-        <div className=''>  
-          <div className='flex flex-col gap-20 items-center justify-center md:flex-row'>
+        <Carousel
+          plugins={[plugin.current]}
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
+          className='mx-auto w-fit'
+        >
+          <CarouselContent className=''>
             {data.map((e) => (
-              <MotionDiv key={e.name} className={cn('')}>
+              <CarouselItem
+                key={e.name}
+                className='flex flex-col gap-5 justify-center items-center'
+              >
                 <Image
                   src={e.image}
                   width={1000}
@@ -42,10 +60,13 @@ export const EnterpriseCard = () => {
                   alt={e.name}
                   title={e.name}
                 />
-              </MotionDiv>
+                <p className='font-bold italic text-muted-foreground'>
+                  {e.name}
+                </p>
+              </CarouselItem>
             ))}
-          </div>
-        </div>
+          </CarouselContent>
+        </Carousel>
       </div>
     </div>
   );
