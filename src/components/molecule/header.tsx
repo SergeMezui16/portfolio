@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import logo from '@/assets/img/logo.jpg';
 import { Navbar } from '.';
+import { SergeMezui } from '@/components/atom'
 
 export const Header = () => {
   return (
@@ -15,9 +16,7 @@ export const Header = () => {
               width={100}
               height={75}
             />
-            <h4 className='text-xl tablet:text-2xl font-bold'>
-              Serge Mezui.
-            </h4>
+            <SergeMezui />
           </div>
         </div>
         <Navbar />
