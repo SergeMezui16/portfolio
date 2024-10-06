@@ -3,8 +3,10 @@ import photo from '@/assets/img/photo.png';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { MotionDiv } from '../atom';
+import { getI18n } from "@/locales/server";
 
-export const HomeCard = () => {
+export const HomeCard = async () => {
+  const t = await getI18n();
   return (
     <div
       className='container min-h-screen flex items-center justify-center bg-background'
@@ -22,15 +24,14 @@ export const HomeCard = () => {
         </MotionDiv>
         <MotionDiv className='w-full tablet:text-end flex flex-col tablet:gap-3 gap-6 text-center'>
           <h1 className='tablet:text-8xl md:text-6xl text-3xl font-bold'>
-            Serge Mezui<span className='text-primary'>.</span>
+            {t("home.name")}<span className='text-primary'>.</span>
           </h1>
           <p className='text-lg md:text-xl text-secondary-foreground'>
-            Backend Developper. I am a web enthusiast who develops solutions to
-            make your life easier and improve your experience through the web.
+            {t("home.bio")}
           </p>
-          <p className='text-muted-foreground'>the Freak.</p>
+          <p className='text-muted-foreground'>{t("home.nickName")}</p>
           <Link href='/#service'>
-            <Button>Voir plus</Button>
+            <Button>{t("home.next")}</Button>
           </Link>
         </MotionDiv>
       </div>
