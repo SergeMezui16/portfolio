@@ -8,51 +8,50 @@ import {
   WebcamIcon,
 } from 'lucide-react';
 import { MotionDiv } from '../atom';
+import { getScopedI18n } from "@/locales/server";
 
-const data = [
-  {
-    id: 'ehrej',
-    title: 'Personalized website design',
-    icon: WebcamIcon,
-    content:
-      'Get your own customized sites like this one to make a name for yourself on the web market.',
-  },
-  {
-    id: 'ehredazdj',
-    title: 'Web App Design',
-    icon: AppWindowIcon,
-    content: 'Let us create web applications to make everyday tasks easier.',
-  },
-  {
-    id: 'ehrazdzaej',
-    title: 'REST API design',
-    icon: ServerIcon,
-    content:
-      'Have your APIs designed to enable you to centralize the business logic of your projects and manage your databases.',
-  },
-  {
-    id: 'eazdlkhrej',
-    title: 'Site design',
-    icon: PaletteIcon,
-    content:
-      'Visualize the final result of your web sites or applications through simple, interactive mock-ups.',
-  },
-  {
-    id: 'zadazdl',
-    title: 'Creation of a showcase site',
-    icon: PointerIcon,
-    content:
-      'Have a showcase site created to enable you to present your products, achievements, etc. to everyone.',
-  },
-  {
-    id: 'azdpo',
-    title: 'Working in a project development team',
-    icon: UsersIcon,
-    content: 'Invite me to a web development project.',
-  },
-] satisfies { id: string; title: string; content: string; icon: LucideIcon }[];
 
-export const Servicecard = () => {
+export const ServiceCard = async () => {
+  const t = await getScopedI18n("service")
+
+  const data = [
+    {
+      id: '1',
+      title: t("services.design.title"),
+      icon: WebcamIcon,
+      content: t("services.design.description"),
+    },
+    {
+      id: '2',
+      title: t("services.website.title"),
+      icon: AppWindowIcon,
+      content: t("services.website.description"),
+    },
+    {
+      id: '3',
+      title: t("services.api.title"),
+      icon: ServerIcon,
+      content: t("services.api.description"),
+    },
+    {
+      id: '4',
+      title: t("services.site.title"),
+      icon: PaletteIcon,
+      content: t("services.site.description"),
+    },
+    {
+      id: '5',
+      title: t("services.showcase.title"),
+      icon: PointerIcon,
+      content: t("services.showcase.description"),
+    },
+    {
+      id: '6',
+      title: t("services.team.title"),
+      icon: UsersIcon,
+      content: t("services.team.description"),
+    },
+  ] satisfies { id: string; title: string; content: string; icon: LucideIcon }[];
   return (
     <div
       className='min-h-screen flex items-center bg-primary py-10'
@@ -61,17 +60,13 @@ export const Servicecard = () => {
       <div className='container'>
         <MotionDiv className='my-10 text-center tablet:text-start'>
           <h1 className='text-6xl font-bold'>
-            My Services<span className='text-primary-foreground'>.</span>
+            {t("title")}<span className='text-primary-foreground'>.</span>
           </h1>
           <p className='my-1 italic text-primary-foreground'>
-            How can you help me?
+            {t("question")}
           </p>
           <div className='py-4'>
-            I&apos;m a young student with a passion for computer science, more
-            specifically web development. I develop solutions that solve
-            problems for people all over the world and simplify their everyday
-            life experience through the internet. I like movies, video games and
-            running.
+            {t("description")}
           </div>
         </MotionDiv>
         <div className=''>
