@@ -49,7 +49,7 @@ export const SkillCard = async () => {
     <div className="container min-h-screen flex items-center py-16" id="skill">
       <div className="">
         <MotionDiv className="text-center tablet:text-start p-5">
-          <h1 className="text-6xl font-bold">
+          <h1 className="text-6xl font-bold break-all">
             {t("title")}<span className="text-primary">.</span>
           </h1>
           <p className="my-1 italic text-primary">{t("question")}</p>

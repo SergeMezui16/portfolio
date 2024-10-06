@@ -37,7 +37,7 @@ export const EnterpriseCard = () => {
     <div className='min-h-screen flex items-center py-10' id='enterprise'>
       <div className='container'>
         <MotionDiv className='my-10 text-center tablet:text-start'>
-          <h1 className='text-6xl font-bold'>
+          <h1 className='text-6xl font-bold break-all'>
             {t("title")}<span className='text-primary'>.</span>
           </h1>
           <p className='my-1 italic text-primary'>{t("question")}</p>
