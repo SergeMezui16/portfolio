@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import { ThemeProvider } from "./theme-provider";
-import { I18nProviderClient } from "../../locales/client";
+import { I18nProviderClient } from "@/locales/client";
 
 export const AppProvider = ({children, locale}: PropsWithChildren<{ locale: string }>) => {
   return (

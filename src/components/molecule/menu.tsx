@@ -12,7 +12,7 @@ export const Menu = ({onClick}: { onClick?: () => void }) => {
     {label: t("nav.skill"), href: "/#skill"},
     {label: t("nav.project"), href: "/#project"},
     {label: t("nav.contact"), href: "/#contact"}
-  ] satisfies { label: string; href: string }[], []);
+  ] satisfies { label: string; href: string }[], [t]);
 
   return (
     <ul className="flex flex-col tablet:flex-row gap-8 text-4xl tablet:text-2xl items-center">
