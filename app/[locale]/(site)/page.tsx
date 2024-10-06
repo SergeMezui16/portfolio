@@ -3,7 +3,7 @@ import {
   EnterpriseCard,
   HomeCard,
   ProjectCard,
-  Servicecard,
+  ServiceCard,
   SkillCard
 } from "@/components/pages";
 import { Header, Social, Footer } from "@/components/molecule";
@@ -15,7 +15,7 @@ export default function Home() {
         <Header/>
         <div className="">
           <HomeCard/>
-          <Servicecard/>
+          <ServiceCard/>
           <SkillCard/>
           <ProjectCard/>
           <EnterpriseCard/>
