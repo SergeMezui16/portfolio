@@ -1,4 +1,7 @@
 export default {
+  fr: "Français",
+  en: "Anglais",
+  switch_lang: "Switch to English",
   manifest: {
     name: "Serge Mezui, Développeur Web.",
     short_name: "Serge Mezui, Développeur Web.",
