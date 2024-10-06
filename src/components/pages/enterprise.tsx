@@ -9,6 +9,7 @@ import {
 } from '../ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { useRef } from 'react';
+import { useScopedI18n } from "@/locales/client";
 
 const data = [
   {
@@ -30,15 +31,16 @@ const data = [
 
 export const EnterpriseCard = () => {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: false }));
+  const t = useScopedI18n("enterprise");
 
   return (
     <div className='min-h-screen flex items-center py-10' id='enterprise'>
       <div className='container'>
         <MotionDiv className='my-10 text-center tablet:text-start'>
           <h1 className='text-6xl font-bold'>
-            They trusted me<span className='text-primary'>.</span>
+            {t("title")}<span className='text-primary'>.</span>
           </h1>
-          <p className='my-1 italic text-primary'>Who have you worked with?</p>
+          <p className='my-1 italic text-primary'>{t("question")}</p>
         </MotionDiv>
         <Carousel
           plugins={[plugin.current]}
