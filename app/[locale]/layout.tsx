@@ -6,29 +6,40 @@ import { euroStile, ubuntu } from "@/assets/fonts";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL } from "@/config/constants";
+import { getScopedI18n } from "@/locales/server";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: "Serge Mezui, Web Developer.",
-  description:
-    "I'm a young student with a passion for computer science, more specifically web development. I develop solutions that solve problems for people all over the world and simplify their everyday life experience through the internet. I like movies, video games and running.",
-  authors: [{name: "Serge Mezui", url: SITE_URL}],
-  creator: "Serge Mezui",
-  keywords: [
-    "mezui",
-    "serge",
-    "gabon",
-    "rwanda",
-    "gabonais",
-    "gabonese",
-    "developer",
-    "serge mezui",
-    "Serge Mezui",
-    "web developer",
-    "sergemezui.com",
-    "sergemezui.dev"
-  ]
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getScopedI18n("manifest");
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: t("name"),
+    description: t("description"),
+    authors: [{name: "Serge Mezui", url: SITE_URL}],
+    creator: "Serge Mezui",
+    alternates: {
+      canonical: "/en",
+      languages: {
+        "en-US": "/en",
+        "fr-FR": "/fr"
+      }
+    },
+    keywords: [
+      "mezui",
+      "serge",
+      "gabon",
+      "rwanda",
+      "gabonais",
+      "gabonese",
+      "developer",
+      "serge mezui",
+      "Serge Mezui",
+      "web developer",
+      "sergemezui.com",
+      "sergemezui.dev"
+    ]
+  };
+}
 
 export default function RootLayout({children}: PropsWithChildren) {
   return (
