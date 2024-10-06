@@ -1,9 +1,10 @@
 import {
+  ContactIcon,
   FlagIcon,
   MailIcon,
   MapPinIcon,
-  PhoneIcon,
-} from 'lucide-react';
+  PhoneIcon
+} from "lucide-react";
 import { MotionDiv } from '../atom';
 
 export const ContactCard = () => {
@@ -25,7 +26,7 @@ export const ContactCard = () => {
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 tablet:mb-0'>
             <MotionDiv className='flex gap-3 items-center'>
               <div className='p-4'>
-                <PhoneIcon className='text-white w-10 h-10 stroke-1' />
+                <PhoneIcon className='text-white w-10 h-10 stroke-1'/>
               </div>
               <div className='flex-1 flex flex-col'>
                 <h2 className='text-2xl'>Phone</h2>
@@ -39,7 +40,7 @@ export const ContactCard = () => {
             </MotionDiv>
             <MotionDiv className='flex gap-3 items-center'>
               <div className='p-4'>
-                <MailIcon className='text-white w-10 h-10 stroke-1' />
+                <MailIcon className='text-white w-10 h-10 stroke-1'/>
               </div>
               <div className='flex-1 flex flex-col'>
                 <h2 className='text-2xl'>Email</h2>
@@ -53,7 +54,7 @@ export const ContactCard = () => {
             </MotionDiv>
             <MotionDiv className='flex gap-3 items-center'>
               <div className='p-4'>
-                <MapPinIcon className='text-white w-10 h-10 stroke-1' />
+                <MapPinIcon className='text-white w-10 h-10 stroke-1'/>
               </div>
               <div className='flex-1 flex flex-col'>
                 <h2 className='text-2xl'>Location</h2>
@@ -62,14 +63,25 @@ export const ContactCard = () => {
             </MotionDiv>
             <MotionDiv className='flex gap-3 items-center'>
               <div className='p-4'>
-                <FlagIcon className='text-white w-10 h-10 stroke-1' />
+                <FlagIcon className='text-white w-10 h-10 stroke-1'/>
               </div>
               <div className='flex-1 flex flex-col'>
                 <h2 className='text-2xl'>Country</h2>
-                <span className='text-primary-foreground'>From Gabon</span>
+                <span className='text-primary-foreground'>🇬🇦 From Gabon</span>
               </div>
             </MotionDiv>
           </div>
+        </div>
+        <div className="flex items-center md:justify-center justify-start">
+          <MotionDiv className='flex gap-3 items-center'>
+            <div className='p-4'>
+              <ContactIcon className='text-white w-10 h-10 stroke-1'/>
+            </div>
+            <div className='flex-1 flex flex-col'>
+              <h2 className='text-2xl'>My Resumé</h2>
+              <a href="/resume/serge-mezui-fullstack-dev-resume-en.pdf" target="_blank" className='text-primary-foreground'>click to open</a>
+            </div>
+          </MotionDiv>
         </div>
       </div>
     </div>
