@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import photo from '@/assets/img/photo.png';
+import smallPhoto from '@/assets/img/photo.png';
+import bigPhoto from '@/assets/img/photo-original.png';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { MotionDiv } from '../atom';
@@ -16,10 +17,13 @@ export const HomeCard = async () => {
         <MotionDiv className='w-full items-end tablet:items-center justify-center flex'>
           <Image
             className='w-[124px] h-[124px] md:w-[184px] md:h-[184px] tablet:w-[344px] tablet:h-[344px] rounded-full shadow-lg shadow-primary mb-8 tablet:mb-0 transition-all hover:scale-105'
-            src={photo}
+            src={bigPhoto}
             alt='Logo Serge Mezui'
-            width={314}
-            height={316}
+            width={1080}
+            height={1080}
+            placeholder='blur'
+            blurDataURL={smallPhoto.blurDataURL}
+            priority
           />
         </MotionDiv>
         <MotionDiv className='w-full tablet:text-end flex flex-col tablet:gap-3 gap-6 text-center'>
