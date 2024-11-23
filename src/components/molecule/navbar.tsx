@@ -7,6 +7,7 @@ import { useToggle } from "usehooks-ts";
 import { Menu } from "./menu";
 import { useChangeLocale, useCurrentLocale, useI18n } from "@/locales/client";
 import { FlagEn, FlagFr } from "@/components/flags";
+import { MotionDiv } from "@/components/atom";
 
 export const Navbar = () => {
   const type = useDeviceType();
@@ -15,7 +16,7 @@ export const Navbar = () => {
   if (type === "mobile")
     return (
       <>
-        <div className="absolute top-0 right-10 m-6">
+        <div className="absolute top-0 right-10 m-6 z-50">
           <ToggleLocale/>
         </div>
         <XIcon
@@ -44,10 +45,10 @@ export const Navbar = () => {
       </>
     );
 
-  return <div className="flex gap-8">
+  return <MotionDiv className="flex gap-8">
     <Menu/>
     <ToggleLocale/>
-  </div>;
+  </MotionDiv>;
 };
 
 const ToggleLocale = () => {
@@ -57,9 +58,10 @@ const ToggleLocale = () => {
   const Flag = locale === "fr" ? FlagEn : FlagFr;
 
   return (
-    <div title={t("switch_lang")} className="flex justify-start items-center text-xl pb-2 font-thin cursor-pointer" onClick={() => {
-      changeLocale(locale === "fr" ? "en" : "fr");
-    }}>
+    <div title={t("switch_lang")} className="flex justify-start items-center text-xl pb-2 font-thin cursor-pointer"
+         onClick={() => {
+           changeLocale(locale === "fr" ? "en" : "fr");
+         }}>
       <Flag className="w-6"/>
     </div>
   );
