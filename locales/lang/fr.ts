@@ -81,7 +81,7 @@ export default {
     visit: "Visiter",
     projects: {
       transitup: {
-        name: "Transit'Up",
+        name: "Transit\r'Up",
         description: "Solution numérique pour coter et faire transiter les colis dans le monde entier."
       },
       spacecoder: {
@@ -112,8 +112,8 @@ export default {
     phone: "Téléphone",
     email: "Adresse email",
     location: "Localisation",
-    country: "Pays d'origine",
-    from: "Du",
+    country: "Origine",
+    from: "Africaine",
     resume: "Mon CV",
     open_resume: "cliquez pour voir le CV",
   },
