@@ -6,47 +6,47 @@ import {
   ServerIcon,
   UsersIcon,
   WebcamIcon,
-} from 'lucide-react';
-import { MotionDiv } from '../atom';
+} from "lucide-react";
+import { MotionDiv } from "../atom";
 import { getScopedI18n } from "@/locales/server";
 
 
 export const ServiceCard = async () => {
-  const t = await getScopedI18n("service")
+  const t = await getScopedI18n("service");
 
   const data = [
     {
-      id: '1',
+      id: "1",
       title: t("services.design.title"),
       icon: WebcamIcon,
       content: t("services.design.description"),
     },
     {
-      id: '2',
+      id: "2",
       title: t("services.website.title"),
       icon: AppWindowIcon,
       content: t("services.website.description"),
     },
     {
-      id: '3',
+      id: "3",
       title: t("services.api.title"),
       icon: ServerIcon,
       content: t("services.api.description"),
     },
     {
-      id: '4',
+      id: "4",
       title: t("services.site.title"),
       icon: PaletteIcon,
       content: t("services.site.description"),
     },
     {
-      id: '5',
+      id: "5",
       title: t("services.showcase.title"),
       icon: PointerIcon,
       content: t("services.showcase.description"),
     },
     {
-      id: '6',
+      id: "6",
       title: t("services.team.title"),
       icon: UsersIcon,
       content: t("services.team.description"),

@@ -1,42 +1,42 @@
-import { SITE_URL } from '@/config/constants';
-import { MetadataRoute } from 'next';
+import { SITE_URL } from "@/config/constants";
+import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: SITE_URL,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: SITE_URL + '/#home',
+      url: SITE_URL + "/#home",
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: SITE_URL + '/#service',
+      url: SITE_URL + "/#service",
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.5,
     },
     {
-      url: SITE_URL + '/#skill',
+      url: SITE_URL + "/#skill",
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.5,
     },
     {
-      url: SITE_URL + '/#project',
+      url: SITE_URL + "/#project",
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.5,
     },
     {
-      url: SITE_URL + '/#contact',
+      url: SITE_URL + "/#contact",
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.4,
     },
   ];

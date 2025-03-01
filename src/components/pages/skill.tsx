@@ -4,7 +4,7 @@ import {
   Layers3Icon,
   LayoutIcon,
   LucideIcon,
-  ServerIcon
+  ServerIcon,
 } from "lucide-react";
 import { MotionDiv } from "../atom";
 import { getScopedI18n } from "@/locales/server";
@@ -18,26 +18,26 @@ export const SkillCard = async () => {
       title: t("skills.design.title"),
       description: t("skills.design.description"),
       icon: Layers3Icon,
-      technos: ["Figma", "Adobe XD"]
+      technos: ["Figma", "Adobe XD"],
     },
     {
       title: t("skills.backend.title"),
       description: t("skills.backend.description"),
       icon: ServerIcon,
-      technos: ["Symfony", "API Platform", "Adonis JS", "Node JS"]
+      technos: ["Symfony", "API Platform", "Adonis JS", "Node JS"],
     },
     {
       title: t("skills.frontend.title"),
       description: t("skills.frontend.description"),
       icon: LayoutIcon,
-      technos: ["Next JS", "React JS", "Vanilla Javascript", "Tailwind", "TypeScript"]
+      technos: ["Next JS", "React JS", "Vanilla Javascript", "Tailwind", "TypeScript"],
     },
     {
       title: t("skills.others.title"),
       description: t("skills.others.description"),
       icon: CogIcon,
-      technos: ["GitHub & Git", "Linux", "Apache Server", "Java"]
-    }
+      technos: ["GitHub & Git", "Linux", "Apache Server", "Java"],
+    },
   ] satisfies {
     title: string;
     description: string;
@@ -58,7 +58,7 @@ export const SkillCard = async () => {
           </div>
         </MotionDiv>
         <MotionDiv className="flex flex-col tablet:flex-row tablet:mt-5 border rounded my-4">
-          {data.map(({icon: Icon, technos, title, description}, i) => (
+          {data.map(({ icon: Icon, technos, title, description }, i) => (
             <MotionDiv
               key={title}
               className={cn(
@@ -75,7 +75,7 @@ export const SkillCard = async () => {
               </h2>
               <div className="p-5">
                 <p>{description}</p>
-                <h3 className="text-xl font-bold my-4 text-primary">{t('techno')}</h3>
+                <h3 className="text-xl font-bold my-4 text-primary">{t("techno")}</h3>
                 <p className="flex flex-col gap-1">
                   {technos.map((t) => (
                     <span key={t}>{t}</span>

@@ -13,13 +13,13 @@ export default {
     service: "Service",
     skill: "Skills",
     contact: "Contact",
-    project: "Project"
+    project: "Project",
   },
   home: {
     name: "Serge Mezui",
     bio: "Full Stack Developer. I am a web enthusiast who develops solutions to make your life easier and improve your experience through the web.",
     nickName: "the Freak.",
-    next: "See more"
+    next: "See more",
   },
   service: {
     title: "My Services",
@@ -28,29 +28,29 @@ export default {
     services: {
       design: {
         title: "Personalized website design",
-        description: "Get your own customized sites like this one to make a name for yourself on the web market."
+        description: "Get your own customized sites like this one to make a name for yourself on the web market.",
       },
       website: {
         title: "Web App Design",
-        description: "Let us create web applications to make everyday tasks easier."
+        description: "Let us create web applications to make everyday tasks easier.",
       },
       api: {
         title: "REST API design",
-        description: "Have your APIs designed to enable you to centralize the business logic of your projects and manage your databases."
+        description: "Have your APIs designed to enable you to centralize the business logic of your projects and manage your databases.",
       },
       site: {
         title: "Site design",
-        description: "Visualize the final result of your web sites or applications through simple, interactive mock-ups."
+        description: "Visualize the final result of your web sites or applications through simple, interactive mock-ups.",
       },
       showcase: {
         title: "Creation of a showcase site",
-        description: "Have a showcase site created to enable you to present your products, achievements, etc. to everyone."
+        description: "Have a showcase site created to enable you to present your products, achievements, etc. to everyone.",
       },
       team: {
         title: "Working in a project development team",
-        description: "Invite me to a web development project."
-      }
-    }
+        description: "Invite me to a web development project.",
+      },
+    },
   },
   skill: {
     title: "My Skills",
@@ -60,21 +60,21 @@ export default {
     skills: {
       design: {
         title: "Design",
-        description: "I make interactive website mock-ups to visualize how the final websites will look."
+        description: "I make interactive website mock-ups to visualize how the final websites will look.",
       },
       backend: {
         title: "Backend",
-        description: "I build APIs and websites with back-end technologies and/or create databases, authentication systems and server-side applications."
+        description: "I build APIs and websites with back-end technologies and/or create databases, authentication systems and server-side applications.",
       },
       frontend: {
         title: "Frontend",
-        description: "I set up SPA (Single Page Application) type applications or fast, interactive applications."
+        description: "I set up SPA (Single Page Application) type applications or fast, interactive applications.",
       },
       others: {
         title: "Others",
-        description: "I also know how to use tools that help me do my job better. I use technologies common to several types of project to adapt to standards."
-      }
-    }
+        description: "I also know how to use tools that help me do my job better. I use technologies common to several types of project to adapt to standards.",
+      },
+    },
   },
   project: {
     title: "My Projects",
@@ -83,29 +83,29 @@ export default {
     projects: {
       transitup: {
         name: "Transit'Up",
-        description: "Digital solution to quote and transit parcels around the world."
+        description: "Digital solution to quote and transit parcels around the world.",
       },
       spacecoder: {
         name: "SpaceCoder",
-        description: "Share tips and tools to better immerse yourself in digital tool."
+        description: "Share tips and tools to better immerse yourself in digital tool.",
       },
       servant: {
         name: "Servant",
-        description: "Cameroon independent mass workers census project."
+        description: "Cameroon independent mass workers census project.",
       },
       spacecoderapi: {
         name: "SpaceCoder API",
-        description: "SpaceCoder's V3 Application Programming Interface."
+        description: "SpaceCoder's V3 Application Programming Interface.",
       },
       akomaserver: {
         name: "Akoma Server",
-        description: "Software for managing corporate communication, data sharing and storage in a secure, synchronized way."
-      }
-    }
+        description: "Software for managing corporate communication, data sharing and storage in a secure, synchronized way.",
+      },
+    },
   },
   enterprise: {
     title: "They trusted me",
-    question: "Who have you worked with?"
+    question: "Who have you worked with?",
   },
   contact: {
     title: "Contacts",
@@ -120,5 +120,5 @@ export default {
   },
   footer: {
     powered: "Powered By",
-  }
+  },
 } as const;

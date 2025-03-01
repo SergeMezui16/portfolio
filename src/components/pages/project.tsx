@@ -1,9 +1,9 @@
-import { cn } from '@/lib/cn';
-import { Button } from '../ui/button';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ExternalLinkIcon } from 'lucide-react';
-import { MotionDiv } from '../atom';
+import { cn } from "@/lib/cn";
+import { Button } from "../ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import { ExternalLinkIcon } from "lucide-react";
+import { MotionDiv } from "../atom";
 import { getScopedI18n } from "@/locales/server";
 
 
@@ -14,36 +14,36 @@ export const ProjectCard = async () => {
     {
       name: t("projects.transitup.name"),
       description: t("projects.transitup.description"),
-      technos: ['PHP', 'Javascript', 'SQL'],
-      link: 'https://transit-up.com',
-      image: '/images/transit-up.png',
+      technos: ["PHP", "Javascript", "SQL"],
+      link: "https://transit-up.com",
+      image: "/images/transit-up.png",
     },
     {
       name: t("projects.spacecoder.name"),
       description: t("projects.spacecoder.description"),
-      link: 'https://fr.spacecoder.fun',
-      technos: ['PHP', 'Javascript', 'SQL'],
-      image: '/images/spacecoder.png',
+      link: "https://fr.spacecoder.fun",
+      technos: ["PHP", "Javascript", "SQL"],
+      image: "/images/spacecoder.png",
     },
     {
       name: t("projects.servant.name"),
       description: t("projects.servant.description"),
-      link: 'https://fr.spacecoder.fun/servant',
-      technos: ['Symfony', 'Tailwind', 'SQL'],
-      image: '/images/servant.png',
+      link: "https://fr.spacecoder.fun/servant",
+      technos: ["Symfony", "Tailwind", "SQL"],
+      image: "/images/servant.png",
     },
     {
       name: t("projects.spacecoderapi.name"),
       description: t("projects.spacecoderapi.description"),
-      technos: ['PHP', 'Open API', 'Swagger UI'],
-      link: 'https://fr.spacecoder.fun/api',
-      image: '/images/spacecoder-api.png',
+      technos: ["PHP", "Open API", "Swagger UI"],
+      link: "https://fr.spacecoder.fun/api",
+      image: "/images/spacecoder-api.png",
     },
     {
       name: t("projects.akomaserver.name"),
       description: t("projects.akomaserver.description"),
-      technos: ['TypeScript', 'Next JS', 'PHP', 'SQL', 'React'],
-      image: '/images/akoma-server.png',
+      technos: ["TypeScript", "Next JS", "PHP", "SQL", "React"],
+      image: "/images/akoma-server.png",
     },
   ] satisfies {
     name: string;
@@ -74,7 +74,7 @@ export const ProjectCard = async () => {
               <MotionDiv
                 key={project.name}
                 className={cn(
-                  'rounded  cursor-pointer flex items-center justify-center text-center group relative'
+                  "rounded  cursor-pointer flex items-center justify-center text-center group relative"
                 )}
               >
                 <Image
@@ -86,15 +86,15 @@ export const ProjectCard = async () => {
                 />
                 <div
                   className={cn(
-                    'opacity-0 group-hover:opacity-100 flex flex-col gap-2 absolute rounded w-full h-full  items-center justify-center backdrop-blur-lg bg-gray-900/80 text-secondary transition-all p-4',
-                    !project.link && 'group-hover:opacity-50'
+                    "opacity-0 group-hover:opacity-100 flex flex-col gap-2 absolute rounded w-full h-full  items-center justify-center backdrop-blur-lg bg-gray-900/80 text-secondary transition-all p-4",
+                    !project.link && "group-hover:opacity-50"
                   )}
                 >
                   <p>{project.description}</p>
                   {project.link && (
                     <Link href={project.link} target='_blank'>
                       <Button className='rounded-full'>
-                        {t("visit")} {project.name}{' '}
+                        {t("visit")} {project.name}{" "}
                         <ExternalLinkIcon className='w-3 h-3 stroke-1' />
                       </Button>
                     </Link>

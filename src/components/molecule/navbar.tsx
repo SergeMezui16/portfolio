@@ -13,7 +13,7 @@ export const Navbar = () => {
   const type = useDeviceType();
   const [open, toggleOpen] = useToggle(false);
 
-  if (type === "mobile")
+  if (type === "mobile") {
     return (
       <>
         <div className="absolute top-0 right-10 m-6 z-50">
@@ -44,6 +44,7 @@ export const Navbar = () => {
         )}
       </>
     );
+  }
 
   return <MotionDiv className="flex gap-8">
     <Menu/>
@@ -59,9 +60,9 @@ const ToggleLocale = () => {
 
   return (
     <div title={t("switch_lang")} className="flex justify-start items-center text-xl pb-2 font-thin cursor-pointer"
-         onClick={() => {
-           changeLocale(locale === "fr" ? "en" : "fr");
-         }}>
+      onClick={() => {
+        changeLocale(locale === "fr" ? "en" : "fr");
+      }}>
       <Flag className="w-6"/>
     </div>
   );

@@ -1,28 +1,28 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { MotionDiv } from '../atom';
+import Image from "next/image";
+import { MotionDiv } from "../atom";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from '../ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
-import { useRef } from 'react';
+} from "../ui/carousel";
+import autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
 import { useScopedI18n } from "@/locales/client";
 
 const data = [
   {
-    name: 'It-Grafik',
-    image: '/images/it-grafik-logo.png',
+    name: "It-Grafik",
+    image: "/images/it-grafik-logo.png",
   },
   {
     name: "Transit'Up",
-    image: '/images/transit-up-logo.png',
+    image: "/images/transit-up-logo.png",
   },
   {
-    name: 'Alphocine Water',
-    image: '/images/alphoncine-logo.png',
+    name: "Alphocine Water",
+    image: "/images/alphoncine-logo.png",
   },
 ] satisfies {
   name: string;
@@ -30,7 +30,7 @@ const data = [
 }[];
 
 export const EnterpriseCard = () => {
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: false }));
+  const plugin = useRef(autoplay({ delay: 2000, stopOnInteraction: false }));
   const t = useScopedI18n("enterprise");
 
   return (

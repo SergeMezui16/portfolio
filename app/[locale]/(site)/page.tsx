@@ -4,7 +4,7 @@ import {
   HomeCard,
   ProjectCard,
   ServiceCard,
-  SkillCard
+  SkillCard,
 } from "@/components/pages";
 import { Header, Social, Footer } from "@/components/molecule";
 

@@ -1,4 +1,4 @@
-import { IconProps } from '../icons';
+import { IconProps } from "../icons";
 
 export const LinkedInIcon = (props: IconProps) => (
   <a

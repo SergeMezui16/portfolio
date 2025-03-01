@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { HTMLAttributes } from 'react';
-import { MotionProps, motion } from 'framer-motion';
+import { HTMLAttributes } from "react";
+import { MotionProps, motion } from "framer-motion";
 
 export type MotionSpanProps = HTMLAttributes<HTMLSpanElement> & MotionProps;
 

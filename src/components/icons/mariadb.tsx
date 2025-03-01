@@ -1,4 +1,4 @@
-import { IconProps } from '.';
+import { IconProps } from ".";
 
 export const MariaDbIcon = (props: IconProps) => (
   <svg

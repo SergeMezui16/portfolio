@@ -3,15 +3,15 @@ import { MotionSpan } from "../atom";
 import { useI18n } from "@/locales/client";
 import { useMemo } from "react";
 
-export const Menu = ({onClick}: { onClick?: () => void }) => {
+export const Menu = ({ onClick }: { onClick?: () => void }) => {
   const t = useI18n();
 
   const links = useMemo(() => [
-    {label: t("nav.home"), href: "/#home"},
-    {label: t("nav.service"), href: "/#service"},
-    {label: t("nav.skill"), href: "/#skill"},
-    {label: t("nav.project"), href: "/#project"},
-    {label: t("nav.contact"), href: "/#contact"}
+    { label: t("nav.home"), href: "/#home" },
+    { label: t("nav.service"), href: "/#service" },
+    { label: t("nav.skill"), href: "/#skill" },
+    { label: t("nav.project"), href: "/#project" },
+    { label: t("nav.contact"), href: "/#contact" },
   ] satisfies { label: string; href: string }[], [t]);
 
   return (

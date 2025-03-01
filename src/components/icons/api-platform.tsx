@@ -1,4 +1,4 @@
-import { IconProps } from '.';
+import { IconProps } from ".";
 
 export const ApiPlatformIcon = (props: IconProps) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 1200' {...props}>

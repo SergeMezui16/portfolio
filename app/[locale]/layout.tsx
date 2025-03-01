@@ -16,14 +16,14 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(SITE_URL),
     title: t("name"),
     description: t("description"),
-    authors: [{name: "Serge Mezui", url: SITE_URL}],
+    authors: [{ name: "Serge Mezui", url: SITE_URL }],
     creator: "Serge Mezui",
     alternates: {
       canonical: "/en",
       languages: {
         "en-US": "/en",
-        "fr-FR": "/fr"
-      }
+        "fr-FR": "/fr",
+      },
     },
     keywords: [
       "mezui",
@@ -37,19 +37,19 @@ export async function generateMetadata(): Promise<Metadata> {
       "Serge Mezui",
       "web developer",
       "sergemezui.com",
-      "sergemezui.dev"
-    ]
+      "sergemezui.dev",
+    ],
   };
 }
 
-export default function RootLayout({children}: PropsWithChildren) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
-    <body className={cn(ubuntu.variable, euroStile.variable)}>
-    {children} <Analytics/>
-    <Matomo />
-    <SpeedInsights/>
-    </body>
+      <body className={cn(ubuntu.variable, euroStile.variable)}>
+        {children} <Analytics/>
+        <Matomo />
+        <SpeedInsights/>
+      </body>
     </html>
   );
 }
