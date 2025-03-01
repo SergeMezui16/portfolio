@@ -10,15 +10,15 @@ const MatomoComponent = () => {
   const [initialised, setInitialised] = useState(false);
   useEffect(() => {
     if (MATOMO_URL && MATOMO_SITE_ID && !initialised) {
-      init({url: MATOMO_URL, siteId: MATOMO_SITE_ID});
+      init({ url: MATOMO_URL, siteId: MATOMO_SITE_ID });
     }
     return () => {
       setInitialised(true);
     };
   }, [initialised, setInitialised]);
 
-  const searchParams = useSearchParams(),
-    pathname = usePathname();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   const searchParamsString = searchParams.toString();
   useEffect(() => {
