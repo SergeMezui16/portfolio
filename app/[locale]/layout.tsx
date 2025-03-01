@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL } from "@/config/constants";
 import { getScopedI18n } from "@/locales/server";
+import Matomo from "@/lib/matomo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getScopedI18n("manifest");
@@ -46,6 +47,7 @@ export default function RootLayout({children}: PropsWithChildren) {
     <html lang="en">
     <body className={cn(ubuntu.variable, euroStile.variable)}>
     {children} <Analytics/>
+    <Matomo />
     <SpeedInsights/>
     </body>
     </html>
