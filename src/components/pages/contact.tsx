@@ -3,16 +3,15 @@ import {
   FlagIcon,
   MailIcon,
   MapPinIcon,
-  PhoneIcon
+  PhoneIcon,
 } from "lucide-react";
 import { MotionDiv } from "../atom";
 import { getCurrentLocale, getScopedI18n } from "@/locales/server";
-import { RESUME_FILE_NAME_FR, RESUME_FILE_NAME_EN } from "@/config/constants";
+import { getResumeUrl } from "@/lib/utils";
 
 export const ContactCard = async () => {
   const t = await getScopedI18n("contact");
   const locale = getCurrentLocale();
-  const file = locale === "fr" ? RESUME_FILE_NAME_FR : RESUME_FILE_NAME_EN;
 
   return (
     <div
@@ -85,8 +84,8 @@ export const ContactCard = async () => {
             </div>
             <div className="flex-1 flex flex-col">
               <h2 className="text-2xl">{t("resume")}</h2>
-              <a href={`/resume/${file}`} target="_blank"
-                 className="text-primary-foreground cursor-pointer">{t("open_resume")}</a>
+              <a href={getResumeUrl(locale)} target="_blank"
+                className="text-primary-foreground cursor-pointer">{t("open_resume")}</a>
             </div>
           </MotionDiv>
         </div>
