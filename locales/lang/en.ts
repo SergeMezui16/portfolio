@@ -1,4 +1,3 @@
-
 export default {
   fr: "French",
   en: "English",
@@ -120,5 +119,10 @@ export default {
   },
   footer: {
     powered: "Powered By",
+  },
+  cv: {
+    title: "SergeMezui.dev - Resume",
+    description: "Serge Mezui's Resume - Curriculum Vitae",
+    download: "Télécharger",
   },
 } as const;

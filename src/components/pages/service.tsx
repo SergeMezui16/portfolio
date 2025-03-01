@@ -10,7 +10,6 @@ import {
 import { MotionDiv } from "../atom";
 import { getScopedI18n } from "@/locales/server";
 
-
 export const ServiceCard = async () => {
   const t = await getScopedI18n("service");
 

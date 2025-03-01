@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { MotionDiv, SergeMezui } from "../atom";
 import { getScopedI18n } from "@/locales/server";
+import data from "@/assets/img/pasker.png";
 
 export const Footer = async () => {
   const t = await getScopedI18n("footer");
@@ -11,7 +12,7 @@ export const Footer = async () => {
         <SergeMezui/>
         <div className="font-mono flex items-center gap-2">
           <span>{t("powered")}</span>
-          <Image src="@/assets/img/pasker.png" alt="Pasker Logo" className="w-32"/>
+          <Image src={data} alt="Pasker Logo" className="w-32"/>
         </div>
       </MotionDiv>
     </div>

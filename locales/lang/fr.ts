@@ -120,4 +120,9 @@ export default {
   footer: {
     powered: "Propulsé par",
   },
+  cv: {
+    title: "SergeMezui.dev - CV",
+    description: "CV de Serge Mezui - Curriculum Vitae",
+    download: "Download",
+  },
 } as const;

@@ -8,7 +8,5 @@ type Params = {
 };
 
 export default function Page({ params }: Params) {
-  const url = getResumeUrl(params.locale);
-
-  redirect(url);
+  redirect(getResumeUrl(params.locale));
 }
