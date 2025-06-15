@@ -8,6 +8,7 @@ import {
 import { MotionDiv } from "../atom";
 import { getCurrentLocale, getScopedI18n } from "@/locales/server";
 import { getResumeUrl } from "@/lib/utils";
+import { FlagGa } from "@/components/flags";
 
 export const ContactCard = async () => {
   const t = await getScopedI18n("contact");
@@ -72,7 +73,7 @@ export const ContactCard = async () => {
               </div>
               <div className="flex-1 flex flex-col">
                 <h2 className="text-2xl">{t("country")}</h2>
-                <span className="text-primary-foreground flex gap-2 items-center">{t("from")}</span>
+                <span className="text-primary-foreground flex gap-2 items-center"><FlagGa className="w-6 shadow-xl" /> {t("from")}</span>
               </div>
             </MotionDiv>
           </div>
