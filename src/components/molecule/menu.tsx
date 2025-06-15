@@ -12,6 +12,7 @@ export const Menu = ({ onClick }: { onClick?: () => void }) => {
     { label: t("nav.skill"), href: "/#skill" },
     { label: t("nav.project"), href: "/#project" },
     { label: t("nav.contact"), href: "/#contact" },
+    // { label: t("nav.cv"), href: "/cv" },
   ] satisfies { label: string; href: string }[], [t]);
 
   return (

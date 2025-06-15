@@ -34,9 +34,14 @@ export const HomeCard = async () => {
             {t("home.bio")}
           </p>
           <p className="text-muted-foreground">{t("home.nickName")}</p>
-          <Link href="/#service">
-            <Button>{t("home.next")}</Button>
-          </Link>
+          <div className="flex gap-2 tablet:justify-end justify-center">
+            <Link target="_blank" href={"/cv"}>
+              <Button>{t("home.cv")}</Button>
+            </Link>
+            <Link href="/#service">
+              <Button variant="secondary">{t("home.next")}</Button>
+            </Link>
+          </div>
         </MotionDiv>
       </div>
     </div>
