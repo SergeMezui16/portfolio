@@ -13,12 +13,14 @@ export default {
     skill: "Compétence",
     contact: "Contact",
     project: "Projet",
+    cv: "CV",
   },
   home: {
     name: "Serge Mezui",
     bio: "Développeur Full Stack. Je suis un passionné du web qui développe des solutions pour vous faciliter la vie et améliorer votre expérience sur le web.",
     nickName: "the Freak.",
     next: "Voir plus",
+    cv: "Mon CV",
   },
   service: {
     title: "Mes services",
@@ -113,7 +115,7 @@ export default {
     email: "Adresse email",
     location: "Localisation",
     country: "Origine",
-    from: "Africaine",
+    from: "Gabon",
     resume: "Mon CV",
     open_resume: "cliquez pour voir le CV",
   },
