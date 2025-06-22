@@ -9,6 +9,8 @@ import { MotionDiv } from "../atom";
 import { getCurrentLocale, getScopedI18n } from "@/locales/server";
 import { getResumeUrl } from "@/lib/utils";
 import { FlagGa } from "@/components/flags";
+import Link from "next/link";
+import { GABON_WIKI_EN, GABON_WIKI_FR } from "@/config/constants";
 
 export const ContactCard = async () => {
   const t = await getScopedI18n("contact");
@@ -73,7 +75,13 @@ export const ContactCard = async () => {
               </div>
               <div className="flex-1 flex flex-col">
                 <h2 className="text-2xl">{t("country")}</h2>
-                <span className="text-primary-foreground flex gap-2 items-center"><FlagGa className="w-6 shadow-xl" /> {t("from")}</span>
+                <Link
+                  href={locale === "fr" ? GABON_WIKI_FR : GABON_WIKI_EN}
+                  target="_blank"
+                  className="text-primary-foreground flex gap-2 items-center"
+                >
+                  <FlagGa className="w-6 shadow-xl" /> {t("from")}
+                </Link>
               </div>
             </MotionDiv>
           </div>
