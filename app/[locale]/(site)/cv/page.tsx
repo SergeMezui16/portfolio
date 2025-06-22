@@ -1,12 +1,9 @@
 import { redirect } from "next/navigation";
 import { getResumeUrl } from "@/lib/utils";
 
-type Params = {
-  params: {
-    locale: "fr" | "en";
-  };
-};
-
-export default function Page({ params }: Params) {
-  redirect(getResumeUrl(params.locale));
+export default async function Page({ params }: {
+  params: Promise<{ locale: "fr" | "en" }>
+}) {
+  const { locale } = await params;
+  redirect(getResumeUrl(locale));
 }
