@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { PropsWithChildren } from "react";
+import { ReactElement } from "react";
 import { cn } from "@/lib/cn";
 import { euroStile, ubuntu } from "@/assets/fonts";
 import { Analytics } from "@vercel/analytics/react";
@@ -8,6 +8,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL } from "@/config/constants";
 import { getScopedI18n } from "@/locales/server";
 import Matomo from "@/lib/matomo";
+import { ThemeProvider } from "next-themes";
+import { AppProvider } from "@/context";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getScopedI18n("manifest");
@@ -42,14 +44,28 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({ children }: PropsWithChildren) {
+export default async function RootLayout({ params, children }: {
+  params: Promise<{ locale: string }>,
+  children: ReactElement
+}) {
+  const { locale } = await params;
+
   return (
-    <html lang="en">
-      <body className={cn(ubuntu.variable, euroStile.variable)}>
-        {children} <Analytics/>
-        <Matomo />
-        <SpeedInsights/>
-      </body>
+    <html lang={locale}>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <AppProvider locale={locale}>
+          <body className={cn(ubuntu.variable, euroStile.variable)}>
+            {children} <Analytics />
+            <Matomo />
+            <SpeedInsights />
+          </body>
+        </AppProvider>
+      </ThemeProvider>
     </html>
   );
 }
