@@ -6,10 +6,11 @@ import { euroStile, ubuntu } from "@/assets/fonts";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL } from "@/config/constants";
-import { getScopedI18n } from "@/locales/server";
+import { getStaticParams, getScopedI18n } from "@/locales/server";
 import Matomo from "@/lib/matomo";
-import { ThemeProvider } from "next-themes";
-import { AppProvider } from "@/context";
+
+export const generateStaticParams = getStaticParams();
+export const dynamicParams = false;
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getScopedI18n("manifest");
@@ -51,21 +52,12 @@ export default async function RootLayout({ params, children }: {
   const { locale } = await params;
 
   return (
-    <html lang={locale}>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-        <AppProvider locale={locale}>
-          <body className={cn(ubuntu.variable, euroStile.variable)}>
-            {children} <Analytics />
-            <Matomo />
-            <SpeedInsights />
-          </body>
-        </AppProvider>
-      </ThemeProvider>
+    <html lang={locale} suppressHydrationWarning>
+      <body className={cn(ubuntu.variable, euroStile.variable)}>
+        {children} <Analytics />
+        <Matomo />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
