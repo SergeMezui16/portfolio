@@ -14,7 +14,7 @@ import { GABON_WIKI_EN, GABON_WIKI_FR } from "@/config/constants";
 
 export const ContactCard = async () => {
   const t = await getScopedI18n("contact");
-  const locale = getCurrentLocale();
+  const locale = (getCurrentLocale() as unknown as "en" | "fr");
 
   return (
     <div

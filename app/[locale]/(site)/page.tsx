@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import {
   ContactCard,
   EnterpriseCard,
@@ -8,7 +9,11 @@ import {
 } from "@/components/pages";
 import { Header, Social, Footer } from "@/components/molecule";
 
-export default function Home() {
+import { setStaticParamsLocale } from "next-international/server";
+
+export default async function Home({ params }: { params: Promise<{ locale: "en" | "fr" }> }) {
+  const { locale } = await params;
+  setStaticParamsLocale(locale);
   return (
     <>
       <div className="min-h-screen">

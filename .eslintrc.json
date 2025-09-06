@@ -1,41 +1,11 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "google",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "rules": {
-    "quotes": [
-      "error",
-      "double"
-    ],
-    "require-jsdoc": "off",
-    "max-len": [
-      "error",
-      {
-        "code": 100,
-        "tabWidth": 2,
-        "ignoreUrls": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreRegExpLiterals": true
+  "extends": ["next/core-web-vitals"],
+  "overrides": [
+    {
+      "files": ["app/**/(site)/page.tsx"],
+      "rules": {
+        "indent": "off"
       }
-    ],
-    "indent": [
-      "error",
-      2
-    ],
-    "object-curly-spacing": [
-      "error",
-      "always"
-    ],
-    "arrow-parens": [
-      "error",
-      "always"
-    ]
-  },
-  "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
+    }
   ]
 }

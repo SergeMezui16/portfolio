@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { euroStile, ubuntu } from "@/assets/fonts";
 import { Analytics } from "@vercel/analytics/react";
@@ -8,8 +8,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL } from "@/config/constants";
 import { getStaticParams, getScopedI18n } from "@/locales/server";
 import Matomo from "@/lib/matomo";
+import { setStaticParamsLocale } from "next-international/server";
 
-export const generateStaticParams = getStaticParams();
+export const generateStaticParams = getStaticParams;
 export const dynamicParams = false;
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -47,9 +48,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({ params, children }: {
   params: Promise<{ locale: string }>,
-  children: ReactElement
+  children: ReactNode
 }) {
   const { locale } = await params;
+  setStaticParamsLocale(locale);
 
   return (
     <html lang={locale} suppressHydrationWarning>
