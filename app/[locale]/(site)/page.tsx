@@ -7,7 +7,6 @@ import {
   ServiceCard,
   SkillCard,
 } from '@/components/pages';
-import { Footer } from '@/components/molecule';
 
 import { setStaticParamsLocale } from 'next-international/server';
 
@@ -21,7 +20,6 @@ export default async function Home({ params }: { params: Promise<{ locale: 'en' 
       <ProjectCard />
       <EnterpriseCard />
       <ContactCard />
-      <Footer />
     </div>
   );
 }
