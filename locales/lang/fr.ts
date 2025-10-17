@@ -10,6 +10,7 @@ export default {
   nav: {
     home: "Accueil",
     service: "Service",
+    blog: "Blog",
     skill: "Compétence",
     contact: "Contact",
     project: "Projet",
