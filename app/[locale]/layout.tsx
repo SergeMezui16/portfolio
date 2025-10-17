@@ -9,6 +9,7 @@ import { SITE_URL } from "@/config/constants";
 import { getStaticParams, getScopedI18n } from "@/locales/server";
 import Matomo from "@/lib/matomo";
 import { setStaticParamsLocale } from "next-international/server";
+import NextTopLoader from 'nextjs-toploader';
 
 export const generateStaticParams = getStaticParams;
 export const dynamicParams = false;
@@ -56,6 +57,7 @@ export default async function RootLayout({ params, children }: {
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={cn(ubuntu.variable, euroStile.variable)}>
+        <NextTopLoader color="hsl(var(--primary))" showSpinner={false} />
         {children} <Analytics />
         <Matomo />
         <SpeedInsights />
