@@ -8,11 +8,12 @@ export const Menu = ({ onClick }: { onClick?: () => void }) => {
 
   const links = useMemo(() => [
     { label: t("nav.home"), href: "/#home" },
-    { label: t("nav.service"), href: "/#service" },
-    { label: t("nav.skill"), href: "/#skill" },
-    { label: t("nav.project"), href: "/#project" },
+    { label: t("nav.blog"), href: "/blog" },
+    // { label: t("nav.service"), href: "/#service" },
+    // { label: t("nav.skill"), href: "/#skill" },
+    // { label: t("nav.project"), href: "/#project" },
+    { label: t("nav.cv"), href: "/cv" },
     { label: t("nav.contact"), href: "/#contact" },
-    // { label: t("nav.cv"), href: "/cv" },
   ] satisfies { label: string; href: string }[], [t]);
 
   return (
