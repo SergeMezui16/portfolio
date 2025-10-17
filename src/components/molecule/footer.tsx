@@ -6,7 +6,7 @@ import data from "@/assets/img/pasker.png";
 export const Footer = async () => {
   const t = await getScopedI18n("footer");
   return (
-    <div className="h-1/2 pb-20 bg-card">
+    <div className="h-1/2 pb-10 bg-card border-t">
       <MotionDiv
         className="container p-10 flex flex-col gap-4 tablet:flex-row justify-between items-center">
         <SergeMezui/>
