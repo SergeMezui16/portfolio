@@ -12,11 +12,7 @@ export default async function Layout({ params, children }: {
   const { locale } = await params;
   setStaticParamsLocale(locale);
   return <AppProvider locale={locale}>
-    <div className="min-h-screen">
-      <div className=""><Header /></div>
-      <div className="relative overflow-hidden bg-background">
-        {children}
-      </div>
+    <div className="relative min-h-screen bg-background">
       <GridPattern
         width={40}
         height={40}
@@ -30,11 +26,17 @@ export default async function Layout({ params, children }: {
           [5, 5],
         ]}
         className={cn(
+          "pointer-events-none absolute inset-0 z-10 h-screen top-20",
           "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]",
-          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+          "opacity-70 skew-y-12"
         )}
       />
-      <Footer />
+
+      <div className="relative z-10 overflow-hidden">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </div>
     </div>
     <Social />
   </AppProvider>;

@@ -10,7 +10,7 @@ export const HomeCard = async () => {
   const t = await getI18n();
   return (
     <div
-      className="container min-h-screen flex items-center justify-center bg-background"
+      className="container min-h-screen flex items-center justify-center"
       id="home"
     >
       <div className="flex flex-col tablet:flex-row">
