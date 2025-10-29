@@ -18,3 +18,10 @@ export const ubuntu = localFont({
   variable: "--font-ubuntu",
   style: "mono",
 });
+
+export const outfit = localFont({
+  src: "./Outfit.ttf",
+  weight: "300",
+  display: "swap",
+  variable: "--font-outfit",
+});

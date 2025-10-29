@@ -88,6 +88,7 @@ const config: Config = {
       },
       fontFamily: {
         "ubuntu": "var(--font-ubuntu)",
+        "outfit": "var(--font-outfit)",
         "europa": "var(--font-europa)",
         "euro-stile": "var(--font-euro-stile)",
       },
