@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ReactNode } from "react";
 import { cn } from "@/lib/cn";
-import { euroStile, ubuntu } from "@/assets/fonts";
+import { euroStile, outfit, ubuntu } from '@/assets/fonts';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL } from "@/config/constants";
@@ -56,7 +56,7 @@ export default async function RootLayout({ params, children }: {
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={cn(ubuntu.variable, euroStile.variable)}>
+      <body className={cn(ubuntu.variable, euroStile.variable, outfit.variable)}>
         <NextTopLoader color="hsl(var(--primary))" showSpinner={false} />
         {children} <Analytics />
         <Matomo />
