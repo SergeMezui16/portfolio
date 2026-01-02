@@ -7,7 +7,7 @@ import {
   UsersIcon,
   WebcamIcon,
 } from "lucide-react";
-import { MotionDiv } from "../atom";
+import { MotionDiv, Point } from '../atom';
 import { getScopedI18n } from "@/locales/server";
 
 export const ServiceCard = async () => {
@@ -53,15 +53,15 @@ export const ServiceCard = async () => {
   ] satisfies { id: string; title: string; content: string; icon: LucideIcon }[];
   return (
     <div
-      className='min-h-screen flex items-center bg-primary py-10'
+      className='min-h-screen flex items-center py-4'
       id='service'
     >
       <div className='container'>
         <MotionDiv className='my-10 text-center tablet:text-start'>
           <h1 className='text-6xl font-bold break-all'>
-            {t("title")}<span className='text-primary-foreground'>.</span>
+            {t("title")}<Point />
           </h1>
-          <p className='my-1 italic text-primary-foreground'>
+          <p className='my-1 italic text-primary'>
             {t("question")}
           </p>
           <div className='py-4'>
@@ -73,14 +73,14 @@ export const ServiceCard = async () => {
             {data.map(({ title, content, id, icon: Icon }) => (
               <MotionDiv
                 key={id}
-                className='max-w-md flex gap-2 backdrop-blur-lg mt-4'
+                className='max-w-md flex gap-2 backdrop-blur-lg mt-4 border transition-all duration-400 bg-card p-4 rounded-md cursor-pointer hover:border-primary hover:border-dashed hover:shadow-lg'
               >
                 <div className='m-2'>
-                  <Icon className='w-8 h-8 stroke-1 text-primary-foreground' />
+                  <Icon className='w-8 h-8 stroke-1 text-primary' />
                 </div>
                 <div className='flex flex-col gap-3'>
                   <h1 className='text-xl font-bold'>{title}</h1>
-                  <p className='text-primary-foreground'>{content}</p>
+                  <p className='text-secondary-foreground'>{content}</p>
                 </div>
               </MotionDiv>
             ))}
