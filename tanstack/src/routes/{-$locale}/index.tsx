@@ -4,7 +4,7 @@ import { useIntlayer } from 'react-intlayer';
 
 import { LocaleSwitcher } from '@/components/locale-switcher';
 import { LocalizedLink } from '@/components/localized-link';
-import { useLocalizedNavigate } from '@/hooks/useLocalizedNavigate';
+import { useLocalizedNavigate } from '@/hooks/use-localized-navigate';
 
 export const Route = createFileRoute('/{-$locale}/')({
   component: RouteComponent,
@@ -32,11 +32,9 @@ function RouteComponent() {
         <LocaleSwitcher />
         <div>
           <LocalizedLink to="/">{content.links.home}</LocalizedLink>
-          {/* <LocalizedLink to="/about">{content.links.about}</LocalizedLink> */}
         </div>
         <div>
           <button onClick={() => navigate({ to: '/' })}>{content.links.home}</button>
-          {/* <button onClick={() => navigate({ to: '/about' })}>{content.links.about}</button> */}
         </div>
       </div>
     </div>

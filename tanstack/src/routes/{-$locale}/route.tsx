@@ -11,6 +11,7 @@ function LayoutComponent() {
 
   return (
     <IntlayerProvider locale={locale ?? defaultLocale}>
+      header
       <Outlet />
     </IntlayerProvider>
   );

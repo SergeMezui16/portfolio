@@ -2,7 +2,7 @@ import { getHTMLTextDir } from 'intlayer';
 import { useEffect } from 'react';
 import { useLocale } from 'react-intlayer';
 
-export const useI18nHTMLAttributes = () => {
+export const useI18nHtmlAttributes = () => {
   const { locale } = useLocale();
 
   useEffect(() => {
