@@ -3,6 +3,20 @@ import { t } from 'intlayer';
 
 const appContent = {
   content: {
+    languages: {
+      locale: t({
+        en: 'English',
+        fr: 'Français',
+      }),
+      en: t({
+        en: 'French',
+        fr: 'Anglais',
+      }),
+      switch_lang: t({
+        en: 'Passer au français',
+        fr: 'Switch to English',
+      }),
+    },
     links: {
       home: t({
         en: 'Home',

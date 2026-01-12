@@ -12,7 +12,7 @@ type StripLocalePrefix<T extends string> = T extends
     ? `/${Rest}`
     : never;
 
-type LocalizedTo = StripLocalePrefix<FileRouteTypes['to']>;
+export type LocalizedTo = StripLocalePrefix<FileRouteTypes['to']>;
 
 type LocalizedNavigate = {
   (to: LocalizedTo): ReturnType<ReturnType<typeof useNavigate>>;
