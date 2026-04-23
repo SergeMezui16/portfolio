@@ -2,7 +2,7 @@ import { MotionDiv, SergeMezui } from '../atom';
 import data from '@/assets/img/pasker.png';
 import { useIntlayer } from 'react-intlayer';
 
-export const Footer = async () => {
+export const Footer = () => {
   const content = useIntlayer('app');
   return (
     <div className="h-1/2 pb-10 bg-card border-t">

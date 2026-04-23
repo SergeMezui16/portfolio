@@ -61,7 +61,7 @@ const ToggleLocale = () => {
       title={content.languages.switch_lang.toString()}
       className="flex justify-start items-center text-xl pb-2 font-thin cursor-pointer "
       onClick={() => {
-        setLocale(locale === 'fr' ? 'fr' : 'en');
+        setLocale(locale === 'fr' ? 'en' : 'fr');
       }}
     >
       <Flag className="w-6" />
