@@ -44,7 +44,7 @@ function BlogPage() {
             <span className="text-sm text-muted-foreground">{post.date}</span>
             <p className="text-muted-foreground">{post.excerpt}</p>
             <div className="flex justify-end mt-2">
-              <LocalizedLink to={`/blog/${post.slug}`}>
+              <LocalizedLink to={`/blog/${post.slug}` as '/blog/$slug'}>
                 <Button size="sm" variant="outline">
                   Read more <ArrowRightIcon className="w-4 h-4 ml-1" />
                 </Button>

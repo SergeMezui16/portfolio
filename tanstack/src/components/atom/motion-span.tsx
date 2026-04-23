@@ -1,7 +1,7 @@
-import { HTMLAttributes } from 'react';
-import { type m, motion } from 'motion/react';
+import { type ComponentProps } from 'react';
+import { motion } from 'motion/react';
 
-export type MotionSpanProps = HTMLAttributes<HTMLSpanElement> & m;
+export type MotionSpanProps = ComponentProps<typeof motion.span>;
 
 export const MotionSpan = (props: MotionSpanProps) => {
   return (

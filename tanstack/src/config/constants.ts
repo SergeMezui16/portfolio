@@ -1,8 +1,8 @@
 export const SITE_URL = 'https://sergemezui.dev';
 
 export const RESUME_FILES = {
-  en: 'en-resume.pdf',
-  fr: 'fr-resume.pdf',
+  en: 'serge-mezui-fullstack-dev-resume-en.pdf',
+  fr: 'serge-mezui-fullstack-dev-resume-fr.pdf',
 } as const;
 
 export const GABON_WIKI_EN = 'https://en.wikipedia.org/wiki/Gabon';
