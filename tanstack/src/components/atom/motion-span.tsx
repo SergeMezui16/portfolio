@@ -1,7 +1,7 @@
 import { HTMLAttributes } from 'react';
-import { MotionProps, motion } from 'framer-motion';
+import { type m, motion } from 'motion/react';
 
-export type MotionSpanProps = HTMLAttributes<HTMLSpanElement> & MotionProps;
+export type MotionSpanProps = HTMLAttributes<HTMLSpanElement> & m;
 
 export const MotionSpan = (props: MotionSpanProps) => {
   return (

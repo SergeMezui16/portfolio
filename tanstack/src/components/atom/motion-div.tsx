@@ -1,7 +1,7 @@
 import { HTMLAttributes } from 'react';
-import { MotionProps, motion } from 'framer-motion';
+import { type m, motion } from 'motion/react';
 
-export type MotionDivProps = HTMLAttributes<HTMLDivElement> & MotionProps;
+export type MotionDivProps = HTMLAttributes<HTMLDivElement> & m;
 
 export const MotionDiv = (props: MotionDivProps) => {
   return (
