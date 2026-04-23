@@ -54,6 +54,17 @@ const config = defineConfig({
     intlayer(),
     serveSharedPublic(),
   ],
+  resolve: {
+    dedupe: ['react', 'react-dom', 'react/jsx-runtime'],
+  },
+  ssr: {
+    noExternal: [
+      'embla-carousel-react',
+      'embla-carousel-autoplay',
+      'embla-carousel',
+      'usehooks-ts',
+    ],
+  },
 });
 
 export default config;
