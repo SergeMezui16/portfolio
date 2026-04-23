@@ -1,6 +1,18 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router';
-import { ThemeProvider } from 'next-themes';
 import appCss from '../styles.css?url';
+
+// Inline script that runs before React hydration to set the correct theme class
+// on <html> without a flash of wrong theme.
+const themeScript = `
+(function(){
+  try {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored === 'dark' || stored === 'light' ? stored : (prefersDark ? 'dark' : 'light');
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  } catch(e){}
+})();
+`.trim();
 
 export const Route = createRootRoute({
   head: () => ({
@@ -8,7 +20,7 @@ export const Route = createRootRoute({
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { title: 'Serge Mezui, Web Developer.' },
-      { name: 'description', content: "Full Stack Developer passionate about building solutions through the web." },
+      { name: 'description', content: 'Full Stack Developer passionate about building solutions through the web.' },
       { name: 'theme-color', content: '#7c3aed' },
     ],
     links: [
@@ -25,11 +37,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
+        {/* biome-ignore lint/security/noDangerouslySetInnerHtml: theme init script must run before paint */}
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-        </ThemeProvider>
+        {children}
         <Scripts />
       </body>
     </html>
