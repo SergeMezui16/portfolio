@@ -14,12 +14,12 @@ export const ServiceCard = () => {
   const t = useIntlayer('service');
 
   const data: { id: string; title: string; icon: LucideIcon; content: string }[] = [
-    { id: '1', title: t.services.design.title.toString(), icon: WebcamIcon, content: t.services.design.description.toString() },
-    { id: '2', title: t.services.website.title.toString(), icon: AppWindowIcon, content: t.services.website.description.toString() },
-    { id: '3', title: t.services.api.title.toString(), icon: ServerIcon, content: t.services.api.description.toString() },
-    { id: '4', title: t.services.site.title.toString(), icon: PaletteIcon, content: t.services.site.description.toString() },
-    { id: '5', title: t.services.showcase.title.toString(), icon: PointerIcon, content: t.services.showcase.description.toString() },
-    { id: '6', title: t.services.team.title.toString(), icon: UsersIcon, content: t.services.team.description.toString() },
+    { id: '1', title: t.services.design.title, icon: WebcamIcon, content: t.services.design.description },
+    { id: '2', title: t.services.website.title, icon: AppWindowIcon, content: t.services.website.description },
+    { id: '3', title: t.services.api.title, icon: ServerIcon, content: t.services.api.description },
+    { id: '4', title: t.services.site.title, icon: PaletteIcon, content: t.services.site.description },
+    { id: '5', title: t.services.showcase.title, icon: PointerIcon, content: t.services.showcase.description },
+    { id: '6', title: t.services.team.title, icon: UsersIcon, content: t.services.team.description },
   ];
 
   return (

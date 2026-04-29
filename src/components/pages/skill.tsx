@@ -7,10 +7,10 @@ export const SkillCard = () => {
   const t = useIntlayer('skill');
 
   const data: { title: string; description: string; icon: LucideIcon; technos: string[] }[] = [
-    { title: t.skills.design.title.toString(), description: t.skills.design.description.toString(), icon: Layers3Icon, technos: ['Figma', 'Adobe XD'] },
-    { title: t.skills.backend.title.toString(), description: t.skills.backend.description.toString(), icon: ServerIcon, technos: ['Symfony', 'API Platform', 'Adonis JS', 'Node JS'] },
-    { title: t.skills.frontend.title.toString(), description: t.skills.frontend.description.toString(), icon: LayoutIcon, technos: ['Next JS', 'React JS', 'Vanilla Javascript', 'Tailwind', 'TypeScript'] },
-    { title: t.skills.others.title.toString(), description: t.skills.others.description.toString(), icon: CogIcon, technos: ['GitHub & Git', 'Linux', 'Apache Server', 'Java'] },
+    { title: t.skills.design.title, description: t.skills.design.description, icon: Layers3Icon, technos: ['Figma', 'Adobe XD'] },
+    { title: t.skills.backend.title, description: t.skills.backend.description, icon: ServerIcon, technos: ['Symfony', 'API Platform', 'Adonis JS', 'Node JS'] },
+    { title: t.skills.frontend.title, description: t.skills.frontend.description, icon: LayoutIcon, technos: ['Next JS', 'React JS', 'Vanilla Javascript', 'Tailwind', 'TypeScript'] },
+    { title: t.skills.others.title, description: t.skills.others.description, icon: CogIcon, technos: ['GitHub & Git', 'Linux', 'Apache Server', 'Java'] },
   ];
 
   return (

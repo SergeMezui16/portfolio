@@ -8,11 +8,11 @@ export const ProjectCard = () => {
   const t = useIntlayer('project');
 
   const data = [
-    { name: t.projects.transitup.name.toString(), description: t.projects.transitup.description.toString(), technos: ['PHP', 'Javascript', 'SQL'], link: 'https://transit-up.com', image: '/images/transit-up.png' },
-    { name: t.projects.spacecoder.name.toString(), description: t.projects.spacecoder.description.toString(), link: 'https://fr.spacecoder.fun', technos: ['PHP', 'Javascript', 'SQL'], image: '/images/spacecoder.png' },
-    { name: t.projects.servant.name.toString(), description: t.projects.servant.description.toString(), link: 'https://fr.spacecoder.fun/servant', technos: ['Symfony', 'Tailwind', 'SQL'], image: '/images/servant.png' },
-    { name: t.projects.spacecoderapi.name.toString(), description: t.projects.spacecoderapi.description.toString(), technos: ['PHP', 'Open API', 'Swagger UI'], link: 'https://fr.spacecoder.fun/api', image: '/images/spacecoder-api.png' },
-    { name: t.projects.akomaserver.name.toString(), description: t.projects.akomaserver.description.toString(), technos: ['TypeScript', 'Next JS', 'PHP', 'SQL', 'React'], image: '/images/akoma-server.png' },
+    { name: t.projects.transitup.name, description: t.projects.transitup.description, technos: ['PHP', 'Javascript', 'SQL'], link: 'https://transit-up.com', image: '/images/transit-up.png' },
+    { name: t.projects.spacecoder.name, description: t.projects.spacecoder.description, technos: ['PHP', 'Javascript', 'SQL'], image: '/images/spacecoder.png' },
+    { name: t.projects.servant.name, description: t.projects.servant.description, technos: ['Symfony', 'Tailwind', 'SQL'], image: '/images/servant.png' },
+    { name: t.projects.spacecoderapi.name, description: t.projects.spacecoderapi.description, technos: ['PHP', 'Open API', 'Swagger UI'], image: '/images/spacecoder-api.png' },
+    { name: t.projects.akomaserver.name, description: t.projects.akomaserver.description, technos: ['TypeScript', 'Next JS', 'PHP', 'SQL', 'React'], image: '/images/akoma-server.png' },
   ] satisfies { name: string; description: string; link?: string; technos: string[]; image: string }[];
 
   return (
