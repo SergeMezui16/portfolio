@@ -2,18 +2,7 @@ import { HeadContent, Scripts, createRootRoute, Outlet } from '@tanstack/react-r
 import appCss from '../styles.css?url';
 import { ThemeProvider } from '@/components/theme-provider.tsx';
 
-// Inline script that runs before React hydration to set the correct theme class
-// on <html> without a flash of wrong theme.
-const themeScript = `
-(function(){
-  try {
-    var stored = localStorage.getItem('theme');
-    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var theme = stored === 'dark' || stored === 'light' ? stored : (prefersDark ? 'dark' : 'light');
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-  } catch(e){}
-})();
-`.trim();
+
 
 export const Route = createRootRoute({
   head: () => ({
@@ -29,16 +18,14 @@ export const Route = createRootRoute({
       { rel: 'icon', href: '/favicon.ico' },
     ],
   }),
-  shellComponent: RootDocument,
-});
+  component: RootComponent,
+})
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootComponent() {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
-        {/* biome-ignore lint/security/noDangerouslySetInnerHtml: theme init script must run before paint */}
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
       <ThemeProvider defaultTheme="system" storageKey="theme">

@@ -1,17 +1,10 @@
-import { createRouter } from '@tanstack/react-router'
+import { createRouter } from '@tanstack/react-router';
+import { routeTree } from './routeTree.gen';
 
-// Import the generated route tree
-import { routeTree } from './routeTree.gen'
-
-// Create a new router instance
-export const getRouter = () => {
-  const router = createRouter({
+export function getRouter() {
+  return createRouter({
     routeTree,
-    context: {},
-
     scrollRestoration: true,
-    defaultPreloadStaleTime: 0,
+    defaultNotFoundComponent: () => <div>Hello "/-$locale/404"!</div>
   })
-
-  return router
 }
