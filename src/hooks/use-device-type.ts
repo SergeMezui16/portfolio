@@ -1,9 +1,7 @@
-"use client";
+import { useEffect, useState } from 'react';
+import { useWindowSize } from 'usehooks-ts';
 
-import { useEffect, useState } from "react";
-import { useWindowSize } from "usehooks-ts";
-
-type Type = "desktop" | "tablet" | "mobile" | "laptop";
+type Type = 'desktop' | 'tablet' | 'mobile' | 'laptop';
 
 /**
  * Hook to determine the device type based on window size.
@@ -15,13 +13,13 @@ export const useDeviceType = (): Type | undefined => {
 
   useEffect(() => {
     if (screen?.width < 840) {
-      setType("mobile");
+      setType('mobile');
     } else if (screen?.width >= 840 && screen?.width < 1024) {
-      setType("tablet");
+      setType('tablet');
     } else if (screen?.width >= 1024 && screen?.width < 1280) {
-      setType("laptop");
+      setType('laptop');
     } else if (screen?.width >= 1280) {
-      setType("desktop");
+      setType('desktop');
     }
   }, [screen?.width]);
 

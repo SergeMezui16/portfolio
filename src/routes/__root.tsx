@@ -1,5 +1,6 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router';
+import { HeadContent, Scripts, createRootRoute, Outlet } from '@tanstack/react-router';
 import appCss from '../styles.css?url';
+import { ThemeProvider } from '@/components/theme-provider.tsx';
 
 // Inline script that runs before React hydration to set the correct theme class
 // on <html> without a flash of wrong theme.
@@ -28,7 +29,6 @@ export const Route = createRootRoute({
       { rel: 'icon', href: '/favicon.ico' },
     ],
   }),
-
   shellComponent: RootDocument,
 });
 
@@ -41,7 +41,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
-        {children}
+      <ThemeProvider defaultTheme="system" storageKey="theme">
+        <Outlet />
+      </ThemeProvider>
         <Scripts />
       </body>
     </html>

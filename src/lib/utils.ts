@@ -1,5 +1,6 @@
-import { RESUME_FILE_NAME_EN, RESUME_FILE_NAME_FR } from "@/config/constants";
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
-export const getResumeUrl = (locale: string = "en") => {
-  return `/resume/${locale === "fr" ? RESUME_FILE_NAME_FR : RESUME_FILE_NAME_EN}`;
-};
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}

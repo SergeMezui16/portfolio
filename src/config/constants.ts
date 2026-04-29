@@ -1,18 +1,14 @@
-export const SITE_URL = "https://sergemezui.com";
+export const SITE_URL = 'https://sergemezui.dev';
 
-export const DEFAULT_LANG = "en-US";
+export const RESUME_FILES = {
+  en: 'serge-mezui-fullstack-dev-resume-en.pdf',
+  fr: 'serge-mezui-fullstack-dev-resume-fr.pdf',
+} as const;
 
-/**
- * Resume file name in English
- */
-export const RESUME_FILE_NAME_EN = "serge-mezui-fullstack-dev-resume-en.pdf";
+export const GABON_WIKI_EN = 'https://en.wikipedia.org/wiki/Gabon';
+export const GABON_WIKI_FR = 'https://fr.wikipedia.org/wiki/Gabon';
 
-/**
- * Resume file name in French
- */
-export const RESUME_FILE_NAME_FR = "serge-mezui-fullstack-dev-resume-fr.pdf";
-
-
-export const GABON_WIKI_EN = "https://en.wikipedia.org/wiki/Gabon";
-
-export const GABON_WIKI_FR = "https://fr.wikipedia.org/wiki/Gabon";
+export function getResumeUrl(locale: string): string {
+  const file = RESUME_FILES[locale as keyof typeof RESUME_FILES] ?? RESUME_FILES.en;
+  return `/resume/${file}`;
+}

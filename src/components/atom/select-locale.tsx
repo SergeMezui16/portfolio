@@ -1,8 +1,4 @@
-"use client";
-
-import { useChangeLocale, useCurrentLocale, useI18n } from "@/locales/client";
-import { FlagEn, FlagFr } from "@/components/flags";
-
+import { FlagEn, FlagFr } from '@/components/flags';
 import {
   Select,
   SelectContent,
@@ -10,30 +6,42 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-
-const data = [
-  { value: "fr" },
-  { value: "en" },
-] as const;
+} from '@/components/ui/select';
+import { useLocale } from 'react-intlayer';
+import { getLocaleName, getPathWithoutLocale, getPrefix } from 'intlayer';
+import { useLocation } from '@tanstack/react-router';
+import { LocalizedTo, useLocalizedNavigate } from '@/hooks/use-localized-navigate.tsx';
 
 export const SelectLocale = () => {
-  const t = useI18n();
-  const changeLocale = useChangeLocale();
-  const locale = useCurrentLocale();
-  const Flag = locale === "fr" ? FlagFr : FlagEn;
+  const { pathname } = useLocation();
+  const navigate = useLocalizedNavigate();
+  const { availableLocales, locale, setLocale } = useLocale();
+  const pathWithoutLocale = getPathWithoutLocale(pathname);
 
   return (
-    <Select onValueChange={(value) => changeLocale(value === "fr" ? "fr" : "en")} defaultValue={locale}>
-      <SelectTrigger className="w-[150px] flex items-center justify-between gap-2">
-        <Flag className="w-6" />
+    <Select
+      defaultValue={locale}
+      onValueChange={(value) => {
+        setLocale(value);
+        navigate({
+          to: pathWithoutLocale as LocalizedTo,
+          locale: getPrefix(value).localePrefix,
+        });
+      }}
+    >
+      <SelectTrigger className="w-37.5 flex items-center justify-between gap-2">
         <SelectValue placeholder="Select a locale" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          {data.map((item) => (
-            <SelectItem key={item.value} value={item.value}>{t(item.value)}</SelectItem>
-          ))}
+          {availableLocales.map((localeEl) => {
+            const Flag = localeEl === 'fr' ? FlagFr : FlagEn;
+            return (
+              <SelectItem key={localeEl} value={localeEl}>
+                <Flag className="w-6" /> {getLocaleName(localeEl, locale)}
+              </SelectItem>
+            );
+          })}
         </SelectGroup>
       </SelectContent>
     </Select>
