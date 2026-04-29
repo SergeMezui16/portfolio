@@ -2,7 +2,7 @@ import { useIntlayer } from 'react-intlayer';
 import { Button } from '../ui/button';
 import { MotionDiv } from '../atom';
 import photoOriginal from '@/assets/img/photo-original.png';
-import { ModeToggle } from '@/components/mode-toggle.tsx';
+import { Link } from '@tanstack/react-router';
 
 export const HomeCard = () => {
   const t = useIntlayer('home');
@@ -26,12 +26,12 @@ export const HomeCard = () => {
           <p className="text-lg md:text-xl text-secondary-foreground">{t.bio}</p>
           <p className="text-muted-foreground">{t.nickName}</p>
           <div className="flex gap-2 tablet:justify-end justify-center">
-            <a href="/cv" target="_blank" rel="noopener noreferrer">
+            <Link to="/cv" target="_blank" rel="noopener noreferrer">
               <Button>{t.cv}</Button>
-            </a>
-            <a href="#service">
+            </Link>
+            <Link to="#service">
               <Button variant="secondary">{t.next}</Button>
-            </a>
+            </Link>
           </div>
         </MotionDiv>
       </div>
