@@ -15,7 +15,7 @@ export const Navbar = () => {
   if (type === 'mobile') {
     return (
       <>
-        <div className="absolute top-0 right-10 m-6 z-50">
+        <div className={cn("absolute top-0 right-10 m-6 z-50", open && "hidden")}>
           <ToggleLocale />
         </div>
         <AlignRightIcon
@@ -35,7 +35,7 @@ export const Navbar = () => {
         {open && (
           <div className="tablet:hidden bg-background flex-col absolute right-0 top-0 p-10 h-screen w-screen flex items-center justify-center">
             <Menu onClick={toggleOpen} />
-            <MotionDiv className="mt-10">
+            <MotionDiv className="mt-10 flex gap-2">
               <SelectLocale />
               <ModeToggle />
             </MotionDiv>
@@ -48,8 +48,10 @@ export const Navbar = () => {
   return (
     <MotionDiv className="flex gap-8">
       <Menu />
-      <SelectLocale />
-      <ModeToggle />
+      <div className="flex gap-2">
+        <SelectLocale />
+        <ModeToggle />
+      </div>
     </MotionDiv>
   );
 };

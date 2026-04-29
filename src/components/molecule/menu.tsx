@@ -6,6 +6,7 @@ import { Link } from '@tanstack/react-router';
 export const Menu = ({ onClick }: { onClick?: () => void }) => {
   const content = useIntlayer('app');
 
+
   const links = useMemo(
     () =>
       [
@@ -21,11 +22,11 @@ export const Menu = ({ onClick }: { onClick?: () => void }) => {
   );
 
   return (
-    <ul className="flex tablet:flex-row gap-8 text-4xl tablet:text-2xl items-center">
+    <ul className="flex flex-col tablet:flex-row gap-8 text-4xl tablet:text-2xl items-center">
       {links.map((link) => (
         <li onClick={onClick} className="group cursor-pointer" key={link.href}>
           <MotionSpan className="group cursor-pointer flex flex-col">
-            <Link className="font-euro-stile font-thin text-2xl" to={link.href}>
+            <Link activeProps={{ className: `text-primary/70` }} className="font-euro-stile font-thin text-2xl" to={link.href}>
               {link.label}
             </Link>
             <span className="hidden border-white bg-primary tablet:inline w-0 h-2 opacity-0 border group-hover:w-3/4 group-hover:opacity-100 transition-all"></span>
